@@ -14,13 +14,13 @@ export const useApiContext = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setApiState(data)
+        setApiState(data);
       });
   }, []); // va a ejecutar una sola vez, cuando cargue la página.
 
-  const addMeal = (newMeal)=>{
-    setApiState([...apiState,newMeal])
-  }
+  const addMeal = (newMeal) => {
+    setApiState([...apiState, newMeal]);
+  };
 
   return { apiState, addMeal }; // aqui se ponen todas las variables que quieres pasar a otros componentes.
 };

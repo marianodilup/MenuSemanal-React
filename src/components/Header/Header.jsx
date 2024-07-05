@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom";
+import "./Header.scss"
 
 
 function Header() {
   return (
+    <header>
+       <h1>Menu Semanal</h1>
     <nav>
       <ul>
         <li>
           <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/List">Menú Semanal</Link>
+          <Link to="/Detail">Detalle</Link>
         </li>
       </ul>
     </nav>
+   
+    </header>
   );
 }
 
