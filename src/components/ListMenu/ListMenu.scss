@@ -4,11 +4,12 @@
     align-content: space-around;
     gap: 50px;
     .li-div{
+        display: flex;
+        flex-wrap: wrap;
         list-style: none;
         background-color: turquoise;
         border: 1px; 
         border-radius: 8px;
-        gap: 50%;
 
         width: 300px;
         .title.div{
