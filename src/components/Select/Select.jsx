@@ -1,5 +1,6 @@
 import { apiContext } from "../Context/apiContext";
 import { useContext, useEffect, useState } from "react";
+import "./Select.scss"
 
 function Select() {
   //tengo que hacer un filtro de la info de la API
@@ -34,28 +35,32 @@ function Select() {
   return (
     <>
       <div>
-        <form action="">
-          <label htmlFor=""> Selecciona el día: </label>
-          <select name="" id="" value={selectedDay} onChange={handleSelect}>
-            <option value="Lunes">Lunes</option>
-            <option value="Martes">Martes</option>
-            <option value="Miércoles">Miércoles</option>
-            <option value="Jueves">Jueves</option>
-            <option value="Viernes">Viernes</option>
-            <option value="Sábado">Sábado</option>
-            <option value="Domingo">Domingo</option>
-          </select>
-        </form>
+        <div className="div-day">
+          <form action="">
+            <label htmlFor=""> Selecciona el día: </label>
+            <select name="" id="" value={selectedDay} onChange={handleSelect}>
+              <option value="Lunes">Lunes</option>
+              <option value="Martes">Martes</option>
+              <option value="Miércoles">Miércoles</option>
+              <option value="Jueves">Jueves</option>
+              <option value="Viernes">Viernes</option>
+              <option value="Sábado">Sábado</option>
+              <option value="Domingo">Domingo</option>
+            </select>
+          </form>
+        </div>
 
-        <form action="">
-          <label htmlFor=""> Filtra por tipo de comida: </label>
-          <select name="" id="" value={selectedType} onChange={handleType}>
-            <option value="">Todos los tipos</option>
-            <option value="Desayuno">Desayuno</option>
-            <option value="Comida">Comida</option>
-            <option value="Cena">Cena</option>
-          </select>
-        </form>
+        <div className=" div-type">
+          <form action="">
+            <label htmlFor=""> Filtra por tipo de comida: </label>
+            <select name="" id="" value={selectedType} onChange={handleType}>
+              <option value="">Todos los tipos</option>
+              <option value="Desayuno">Desayuno</option>
+              <option value="Comida">Comida</option>
+              <option value="Cena">Cena</option>
+            </select>
+          </form>
+        </div>
 
         {selectedDay && (
           <div>
