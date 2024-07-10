@@ -1,27 +1,24 @@
+import React from "react";
 import { useContext, useState } from "react";
 import { apiContext } from "../Context/apiContext";
-import "./ListMenu.scss"
+import Meal from "../Meal/Meal";
 
-function ListMenu() {
+function ListMenu({ selectedDay, selectedMealType }) {
   const { apiState } = useContext(apiContext);
 
-  /* const meals = apiState.map((meal)=>{
-   return meal.id, meal.name, meal.description
-  }); */
-
+  const filteredMeals = apiState.filter((meal) => {
+    return (
+      (selectedDay === "" || meal.day === selectedDay) &&
+      (selectedMealType === "" || meal.type === selectedMealType)
+    );
+  });
   return (
     <>
-      <div className="card-div">
-        <ul>
-          {apiState.map((meal) => (
-            <li key={meal.id} className="li-div">
-              <h2 className="title-div">{meal.name}</h2>
-              <img className="img-div" src={meal.img} alt="" />
-              <p className="p-div">{meal.description}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <section>
+        {filteredMeals.map((meal) => (
+          <Meal meal={meal} />
+        ))}
+      </section>
     </>
   );
 }

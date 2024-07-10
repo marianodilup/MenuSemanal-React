@@ -10,7 +10,7 @@ function Header() {
           <li>
             <Link to="/"> Menú diario</Link>
             <Link to="/ListMenu"> Lista de comidas</Link>
-            <Link to="/Detail"> Detalle</Link>
+            <Link to="/Login"> Login</Link>
           </li>
         </ul>
       </nav>
