@@ -9,7 +9,7 @@ function Header() {
         <ul>
           <li>
             <Link to="/"> Menú diario</Link>
-            <Link to="/ListMenu"> Lista de comidas</Link>
+            <Link to="/CreateMenu"> Crear nuevo Menú</Link>
             <Link to="/Login"> Login</Link>
           </li>
         </ul>

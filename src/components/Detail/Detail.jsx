@@ -14,17 +14,21 @@ function Detail() {
 
   return (
     <div>
-      <article className="card">
-        <h2>{findMeal.name}</h2>
-        <h3>
-          Tipo de comida:{" "}
-          {findMeal.type === "Desayuno" ? "☕ Desayuno" : "🍴Almuerzo"}{" "}
-        </h3>
-        <img src={findMeal.img} alt="" />
-        <h3>{findMeal.description}</h3>
-      </article>
-
-      <Link to={"/"}>Volver al Home</Link>
+      {findMeal ? (
+        <>
+          {" "}
+          <article className="card">
+            <h2>{findMeal.name}</h2>
+            <h3>
+              Tipo de comida:{" "}
+              {findMeal.type === "Desayuno" ? "☕ Desayuno" : "🍴Almuerzo"}{" "}
+            </h3>
+            <img src={findMeal.img} alt="" />
+            <h3>{findMeal.description}</h3>
+          </article>
+          <Link to={"/"}>Volver al Home</Link>
+        </>
+      ) : null}
     </div>
   );
 }

@@ -1,16 +1,15 @@
 import { apiContext, useApiContext } from "./Context/apiContext"; // importación del contexto y el hook personalizado de la API
 import { Route, Routes } from "react-router-dom";
 import Header from "./Header/Header";
-
 import "./App.scss";
 import { useState } from "react";
 import Detail from "./Detail/Detail";
-import Select from "./Select/Select";
 import NotFound from "./NotFound/NotFound";
 import Login from "./Login/Login";
 import AuthRout from "./AuthRout/AuthRout";
 import ListMenu from "./ListMenu/ListMenu";
 import SelectDay from "./SelectDay/SelectDay";
+import CreateMenu from "./CreateMenu/CreateMenu";
 
 function App() {
   const contextApi = useApiContext(); //Variable igualada al hook personalizado de la API
@@ -29,15 +28,14 @@ function App() {
             path="/"
             element={
               <main>
-                {" "}
                 <SelectDay setDay={setDay} setMealType={setMealType} />{" "}
                 <ListMenu selectedDay={day} selectedMealType={mealType} />
               </main>
             }
           />
           <Route
-            path="/ListMenu"
-            element={<AuthRout user={userData} component={<ListMenu />} />}
+            path="/CreateMenu"
+            element={<AuthRout user={userData} component={<CreateMenu/>} />}
           />
           <Route path="/Detail/:idMeal" element={<Detail />} />
           <Route path="*" element={<NotFound />} />
