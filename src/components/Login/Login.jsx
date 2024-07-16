@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { getDataFromApi } from "../Services/LoginApi";
 import "./Login.scss";
-import { Link, useNavigate} from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const initial_state = {
   username: "",
@@ -10,7 +10,9 @@ const initial_state = {
 
 function Login({ setUserData, setRedirectPath }) {
   const [user, setUser] = useState(initial_state);
- const navigate= useNavigate();
+  const navigate = useNavigate();
+  const location= useLocation();
+  const redirectPath = location.state?.from || "/MenuDiario";
   //Petición al servidor
 
   const handleInput = (ev) => {
@@ -22,7 +24,7 @@ function Login({ setUserData, setRedirectPath }) {
     getDataFromApi(user).then((data) => {
       localStorage.setItem("user", JSON.stringify(data));
       setUserData(data);
-     navigate(-1);
+      navigate(redirectPath);
     });
   };
 

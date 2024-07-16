@@ -18,31 +18,38 @@ function App() {
   const dataLocal = JSON.parse(localStorage.getItem("user"));
   const [userData, setUserData] = useState(dataLocal);
 
-
-
   return (
     <>
-    
       <apiContext.Provider value={contextApi}>
         <Routes>
-          <Route path="/" element={<Header/>}/>
+          <Route path="/" element={<Header />} />
           <Route
             path="/MenuDiario"
             element={
-              <AuthRout user={userData} component={
-                <main>
-                <SelectDay setDay={setDay} setMealType={setMealType} />
-                <ListMenu selectedDay={day} selectedMealType={mealType} />
-              </main>}/>
+              <AuthRout
+                user={userData}
+                component={
+                  <main>
+                    <SelectDay setDay={setDay} setMealType={setMealType} />
+                    <ListMenu selectedDay={day} selectedMealType={mealType} />
+                  </main>
+                }
+              />
             }
           />
           <Route
             path="/CreateMenu"
-            element={<AuthRout user={userData} component={<CreateMenu/>} />}
+            element={
+              <AuthRout
+                user={userData}
+                component={<CreateMenu />}
+                redirectPath="/CreateMenu"
+              />
+            }
           />
           <Route path="/Detail/:idMeal" element={<Detail />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/Login" element={<Login setUserData={setUserData}/>} />
+          <Route path="/Login" element={<Login setUserData={setUserData} />} />
         </Routes>
       </apiContext.Provider>
     </>
