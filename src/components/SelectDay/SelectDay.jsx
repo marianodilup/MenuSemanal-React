@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function SelectDay({ setDay, setMealType }) {
   const handleSelectDay = (ev) => {
@@ -11,6 +12,10 @@ function SelectDay({ setDay, setMealType }) {
 
   return (
     <>
+      <div>
+        <Link to="/">Inicio</Link>
+        <Link to="/CreateMenu">Crear nuevo menú</Link>
+      </div>
       <div className="div-day">
         <form action="">
           <label htmlFor=""> Selecciona el día: </label>

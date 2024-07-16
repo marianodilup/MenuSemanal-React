@@ -1,43 +1,54 @@
 import React, { useState } from "react";
-import {getDataFromApi }from "../Services/LoginApi";
-import "./Login.scss"
-
+import { getDataFromApi } from "../Services/LoginApi";
+import "./Login.scss";
+import { Link, useNavigate} from "react-router-dom";
 
 const initial_state = {
   username: "",
   password: "",
 };
 
-function Login({setUserData}) {
+function Login({ setUserData, setRedirectPath }) {
+  const [user, setUser] = useState(initial_state);
+ const navigate= useNavigate();
+  //Petición al servidor
 
-    const [user, setUser]= useState(initial_state);
-//Petición al servidor
   const handleInput = (ev) => {
-    setUser({...user,[ev.target.id]: ev.target.value});
+    setUser({ ...user, [ev.target.id]: ev.target.value });
   };
 
-  const handleForm=(ev)=>{
+  const handleForm = (ev) => {
     ev.preventDefault();
-getDataFromApi(user).then((data)=> {
-    localStorage.setItem("user",JSON.stringify(data));
-    setUserData(data);
-});
-  }
+    getDataFromApi(user).then((data) => {
+      localStorage.setItem("user", JSON.stringify(data));
+      setUserData(data);
+     navigate(-1);
+    });
+  };
 
- 
   return (
     <>
-    
-    <div className="login-card">
-    <h2> Iniciar Sesión </h2>
-      <form onChange={handleInput} onSubmit={handleForm}>
-        <label htmlFor="username"> Nombre de usuario: </label>
-        <input type="text" name="username" id="username" placeholder="Username: emilys"/>
-        <label htmlFor="password"> Contraseña: </label>
-        <input type="password" name="password" id="password"placeholder="password: emilyspass " />
-        <button> Log in </button>
-      </form>
-    </div>
+      <div className="login-card">
+        <Link to="/">Inicio</Link>
+        <h2> Iniciar Sesión </h2>
+        <form onChange={handleInput} onSubmit={handleForm}>
+          <label htmlFor="username"> Nombre de usuario: </label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username: emilys"
+          />
+          <label htmlFor="password"> Contraseña: </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="password: emilyspass "
+          />
+          <button> Log in </button>
+        </form>
+      </div>
     </>
   );
 }

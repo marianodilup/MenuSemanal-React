@@ -2,6 +2,7 @@ import React from "react";
 import "./CreateMenu.scss";
 import { useContext, useState } from "react";
 import { apiContext } from "../Context/apiContext";
+import { Navigate } from "react-router-dom";
 
 function CreateMenu() {
   const { addMeal } = useContext(apiContext);
@@ -61,10 +62,8 @@ function CreateMenu() {
         <label htmlFor="img">Imágen: </label>
         <input
           type="text"
-          src=""
-          alt=""
-          placeholder="url"
           id="img"
+          placeholder="url"
           onChange={handleInput}
         />
         <label htmlFor="description">Descripción: </label>

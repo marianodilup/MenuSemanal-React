@@ -1,5 +1,5 @@
 import { apiContext, useApiContext } from "./Context/apiContext"; // importación del contexto y el hook personalizado de la API
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Header from "./Header/Header";
 import "./App.scss";
 import { useState } from "react";
@@ -18,19 +18,22 @@ function App() {
   const dataLocal = JSON.parse(localStorage.getItem("user"));
   const [userData, setUserData] = useState(dataLocal);
 
+
+
   return (
     <>
-      <Header />
-
+    
       <apiContext.Provider value={contextApi}>
         <Routes>
+          <Route path="/" element={<Header/>}/>
           <Route
-            path="/"
+            path="/MenuDiario"
             element={
-              <main>
-                <SelectDay setDay={setDay} setMealType={setMealType} />{" "}
+              <AuthRout user={userData} component={
+                <main>
+                <SelectDay setDay={setDay} setMealType={setMealType} />
                 <ListMenu selectedDay={day} selectedMealType={mealType} />
-              </main>
+              </main>}/>
             }
           />
           <Route
@@ -39,7 +42,7 @@ function App() {
           />
           <Route path="/Detail/:idMeal" element={<Detail />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/Login" element={<Login setUserData={setUserData} />} />
+          <Route path="/Login" element={<Login setUserData={setUserData}/>} />
         </Routes>
       </apiContext.Provider>
     </>

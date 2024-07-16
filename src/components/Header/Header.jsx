@@ -3,17 +3,21 @@ import "./Header.scss";
 
 function Header() {
   return (
-    <header>
-      <h1>Menu Semanal</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/"> Menú diario</Link>
-            <Link to="/CreateMenu"> Crear nuevo Menú</Link>
-            <Link to="/Login"> Login</Link>
-          </li>
-        </ul>
-      </nav>
+    <header className="full-page-header">
+
+      <div className="header-content">
+        <h1>Bienvenid@ a tu menu semanal </h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/"></Link>
+              <Link to="/MenuDiario" className="button"> Menú diario</Link>
+              <Link to="/CreateMenu" className="button"> Crear nuevo Menú</Link>
+              <Link to="/Login" className="button"> Login</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }
