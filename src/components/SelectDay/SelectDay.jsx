@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./SelectDay.scss"
+import "./SelectDay.scss";
 
 function SelectDay({ setDay, setMealType }) {
   const handleSelectDay = (ev) => {
@@ -14,9 +14,15 @@ function SelectDay({ setDay, setMealType }) {
   return (
     <>
       <div className="full-page-select">
-        <div >
-          <Link to="/" className="button" > Inicio</Link>
-          <Link to="/CreateMenu" className="button"> Crear nuevo menú</Link>
+        <div>
+          <Link to="/" className="button">
+            {" "}
+            Inicio
+          </Link>
+          <Link to="/CreateMenu" className="button">
+            {" "}
+            Crear nuevo menú
+          </Link>
         </div>
         <div className="div-day">
           <form action="">

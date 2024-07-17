@@ -9,29 +9,18 @@ export const apiContext = createContext();
 export const useApiContext = () => {
   const [apiState, setApiState] = useState([]); //variable de estado de la API
 
-  useEffect(() => {
+  const getMeal = () => {
     fetch("https://6685d15f83c983911b0018fa.mockapi.io/menu")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setApiState(data);
       });
+  };
+
+  useEffect(() => {
+    getMeal();
   }, []); // va a ejecutar una sola vez, cuando cargue la página.
 
-  const addMeal = (newMeal) => {
-    fetch("https://6685d15f83c983911b0018fa.mockapi.io/menu", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newMeal),
-   
-   
-    /* setApiState([...apiState, newMeal]); */
-  })
-
-  .then((response) => response.json())
-  .then((data) => setApiState([...apiState, newMeal]));
-};
-
-
-  return { apiState, addMeal }; // aqui se ponen todas las variables que quieres pasar a otros componentes.
+  
+  return { apiState, setApiState , getMeal}; // aqui se ponen todas las variables que quieres pasar a otros componentes.
 };

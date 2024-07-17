@@ -2,10 +2,11 @@ import React from "react";
 import "./CreateMenu.scss";
 import { useContext, useState } from "react";
 import { apiContext } from "../Context/apiContext";
-import { Link, Navigate } from "react-router-dom";
+import { addMeal } from "../Services/Crud";
+import { Link } from "react-router-dom";
 
 function CreateMenu() {
-  const { addMeal } = useContext(apiContext);
+  const { getMeal} = useContext(apiContext);
   const [meal, setMeal] = useState({
     name: "",
     day: "",
@@ -21,7 +22,7 @@ function CreateMenu() {
   };
   const handleSubmit = (ev) => { //función del botón
     ev.preventDefault(); 
-    addMeal(meal);// agregar la nueva comida
+    addMeal(meal,getMeal);// agregar la nueva comida
     setMeal({ //Reset Formulario
       name: "",
       day: "",
