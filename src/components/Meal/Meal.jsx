@@ -21,7 +21,7 @@ deleteMeal(id).then((data) => {
     <div className="meal-content">
       
       <article className="card">
-      <button key={meal.id} onClick={handleClick} id={meal.id}>Eliminar</button>
+      <button className="button-meal" key={meal.id} onClick={handleClick} id={meal.id}>Eliminar</button>
         <Link className="link" to={`/detail/${meal.id}`}>
           <h2 className="h">{meal.name}</h2>
           <img src={meal.img} alt="" />
