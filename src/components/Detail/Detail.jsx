@@ -14,13 +14,13 @@ function Detail() {
 
   return (
     <div>
-       <Link className="button" to={"/"}>Volver al Home</Link>
+       <Link className="button" to={"/MenuDiario"}>Volver al menú diario</Link>
       {findMeal ? (
         <>
           
           <div className="detail-content">
             <article className="card">
-              <h2>{findMeal.name}</h2>
+              <h2 className="h">{findMeal.name}</h2>
               <h3>
                 Tipo de comida:
                 {findMeal.type === "Desayuno" ? "☕ Desayuno" : "🍴" + findMeal.type}

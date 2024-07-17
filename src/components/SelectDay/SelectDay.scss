@@ -65,3 +65,17 @@
             }
 
 }}
+
+@media (min-width: 768px) {
+  .full-page-select {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Espaciado interno mayor para pantallas más grandes */
+  }
+
+  .div-day,
+  .div-type {
+    margin-bottom: 0; /* Elimina el margen entre los selectores */
+  }
+}

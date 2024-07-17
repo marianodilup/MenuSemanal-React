@@ -1,31 +1,28 @@
-.meal-content{
-display: flex;
-justify-content: center;
+ .meal-content {
+  display: flex;
+  justify-content: center; 
 
-
-
-
-.card{
-    
+  .card {
     margin: 10px;
     background-color: white;
-    width: 50%;
+    width: 60%;
     border-radius: 10px;
     border: 2px solid white;
-    .link{
-        text-decoration: none;
-      
-    }
-    .h{
-        color: black;
-      text-align: center;
-     
+    
+  }
+  .link {
+    text-decoration: none;
+  }
+  .h {
+    color: black;
+    text-align: center;
+  }
 
-    }
+  img {
+    width: 100%;
+    height: auto; 
+ 
+  }
+
+} 
   
-    img{
-        width: 100%
-    }
-
-
-}}
