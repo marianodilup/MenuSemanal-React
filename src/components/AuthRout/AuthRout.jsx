@@ -7,7 +7,7 @@ function AuthRout({ user, component, redirectPath}) {
   if (user) {
     return component;
   } else {
-    return <Navigate to="/Login" state={{from: redirectPath}}/>;
+    return <Navigate to="/Login" state={{from: redirectPath}}/>; // redirectPath para ir a otras rutas privadas
   }
 }
 

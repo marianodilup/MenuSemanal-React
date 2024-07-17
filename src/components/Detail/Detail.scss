@@ -1,9 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .button{
+    display:inline-block;
+            padding: 0.75rem 1.5rem;
+            margin: 3px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.5 rem;
+            transition: background-color 0.3s, transform 0.3s;
+            gap: 10px;
+       
+
+            &:hover {
+              background-color: rgba(255, 255, 255, 0.4);
+              transform: scale(1.05);
+            }}
+
+.detail-content{
+
+
+display: flex;
+justify-content: center;
+ 
+
+
 .card{
-    width: 50%;
-    border-radius: 10px;
-    border: 2px solid black;
+    
+  margin: 10px;
+  background-color: white;
+  width: 50%;
+  border-radius: 10px;
+  border: 2px solid white;
     img{
         width: 100%
     }
 
+
 }
+} 

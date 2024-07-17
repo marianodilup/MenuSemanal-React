@@ -16,11 +16,13 @@ function ListMenu({ selectedDay, selectedMealType }) {
   return (
     <>
   
-      <section>
-        {filteredMeals.map((meal) => (
-          <Meal meal={meal} />
-        ))}
-      </section>
+      <div className="full-page-listmenu">
+        <section>
+          {filteredMeals.map((meal) => (
+            <Meal meal={meal} />
+          ))}
+        </section>
+      </div>
     </>
   );
 }

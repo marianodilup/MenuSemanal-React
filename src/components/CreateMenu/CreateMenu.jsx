@@ -2,7 +2,7 @@ import React from "react";
 import "./CreateMenu.scss";
 import { useContext, useState } from "react";
 import { apiContext } from "../Context/apiContext";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 function CreateMenu() {
   const { addMeal } = useContext(apiContext);
@@ -32,50 +32,60 @@ function CreateMenu() {
   };
 
   return (
-    <fieldset className="form-card">
+    <>
+    <div>
+    <Link to="/" className="button" >Inicio</Link>
+      <Link to="/MenuDiario" className="button"  > Menú Diario</Link>
+    </div>
+   
 
+    <div className="content">
+      <fieldset className="form-card">
       
-      
-      <form action="" className="form" onSubmit={handleSubmit}>
-      <h2>Crea tu nueva comida:</h2>
-        <label htmlFor="name">Nombre: </label>
-        <input
-          type="text"
-          id="name"
-          placeholder="Ensalada"
-          onChange={handleInput}
-        />
-        <label htmlFor="day">Día de la semana: </label>
-        <input
-          type="text"
-          id="day"
-          placeholder="Lunes"
-          onChange={handleInput}
-        />
-        <label htmlFor="type">Tipo de Comida: </label>
-        <input
-          type="text"
-          id="type"
-          placeholder="Cena"
-          onChange={handleInput}
-        />
-        <label htmlFor="img">Imágen: </label>
-        <input
-          type="text"
-          id="img"
-          placeholder="url"
-          onChange={handleInput}
-        />
-        <label htmlFor="description">Descripción: </label>
-        <input
-          type="text"
-          id="description"
-          placeholder="Ensalada con tomates cherry"
-          onChange={handleInput}
-        />
-        <button type="submit"> Añadir </button>
-      </form>
-    </fieldset>
+        <form action="" className="form" onSubmit={handleSubmit}>
+        <h2>Crea tu nueva comida:</h2>
+          <label htmlFor="name">Nombre: </label>
+          <input
+            type="text"
+            id="name"
+            placeholder="Ensalada"
+            onChange={handleInput}
+          />
+          <label htmlFor="day">Día de la semana: </label>
+          <input
+            type="text"
+            id="day"
+            placeholder="Lunes"
+            onChange={handleInput}
+          />
+          <label htmlFor="type">Tipo de Comida: </label>
+          <input
+            type="text"
+            id="type"
+            placeholder="Cena"
+            onChange={handleInput}
+          />
+          <label htmlFor="img">Imágen: </label>
+          <input
+            type="text"
+            id="img"
+            placeholder="url"
+            onChange={handleInput}
+          />
+          <label htmlFor="description">Descripción: </label>
+          <input
+            type="text"
+            id="description"
+            placeholder="Ensalada con tomates cherry"
+            onChange={handleInput}
+          />
+          <button type="submit"> Añadir </button>
+        </form>
+      </fieldset>
+    </div>
+
+
+    </>
   );
 }
 

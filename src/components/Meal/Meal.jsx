@@ -4,13 +4,16 @@ import React from "react";
 
 function Meal({ meal }) {
   return (
-    <article className="card">
-      <Link to={`/detail/${meal.id}`}>
-        <h2>{meal.name}</h2>
-        <img src={meal.img} alt="" />
-        <h4>{meal.description}</h4>
-      </Link>
-    </article>
+    
+    <div className="meal-content">
+      <article className="card">
+        <Link className="link" to={`/detail/${meal.id}`}>
+          <h2 className="h">{meal.name}</h2>
+          <img src={meal.img} alt="" />
+          <h4 className="h">{meal.description}</h4>
+        </Link>
+      </article>
+    </div>
   );
 }
 
