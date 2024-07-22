@@ -48,8 +48,9 @@ function App() {
             }
           />
           <Route path="/Detail/:idMeal" element={<Detail />} />
-          <Route path="*" element={<NotFound />} />
+          
           <Route path="/Login" element={<Login setUserData={setUserData} />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </apiContext.Provider>
     </>
