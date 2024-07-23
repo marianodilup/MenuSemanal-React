@@ -70,5 +70,17 @@ form{
         color: black;
         cursor: pointer;
     }
+
+    .error-message {
+      color: red;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    
+    .no-error {
+      display: none;
+    } 
+    
 }
+
 }}

@@ -14,6 +14,7 @@ function Login({ setUserData, setRedirectPath }) {
   const location= useLocation();
   const redirectPath = location.state?.from || "/MenuDiario"; // ir a la pagina de localización o a MenuDiario.
   //Petición al servidor
+  const [error, SetError]= useState("");
 
   const handleInput = (ev) => {
     setUser({ ...user, [ev.target.id]: ev.target.value });
@@ -22,9 +23,15 @@ function Login({ setUserData, setRedirectPath }) {
   const handleForm = (ev) => {
     ev.preventDefault();
     getDataFromApi(user).then((data) => {
-      localStorage.setItem("user", JSON.stringify(data));
-      setUserData(data);
-      navigate(redirectPath); // redirigir a la página que habias dado clic
+      console.log(data);
+      if(data.token){
+        localStorage.setItem("user", JSON.stringify(data));
+        setUserData(data);
+        navigate(redirectPath); // redirigir a la página que habias dado clic
+      }else {
+        SetError(data.message)
+      }
+      
     });
   };
 
@@ -49,6 +56,7 @@ function Login({ setUserData, setRedirectPath }) {
               id="password"
               placeholder="password: emilyspass "
             />
+             <p className={error ? "error-message" : "no-error"}>{error}</p>
             <button> Log in </button>
           </form>
         </div>

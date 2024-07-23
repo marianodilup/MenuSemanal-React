@@ -12,6 +12,33 @@ body, html {
 .full-page-listmenu{
   display: flex;
   justify-content: center;
+  padding: 20px;
 }
 
 
+
+@media (min-width: 1024px) {
+  .full-page-listmenu {
+    section {
+      max-width: 1200px;
+    }
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .full-page-listmenu {
+    section {
+      max-width: 768px;
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .full-page-listmenu {
+    section {
+      max-width: 100%;
+    }
+  }
+} 

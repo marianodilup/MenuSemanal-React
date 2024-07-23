@@ -79,3 +79,54 @@
     margin-bottom: 0; /* Elimina el margen entre los selectores */
   }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .full-page-select {
+    height: 50vh; /* Ajuste de altura para tabletas */
+    padding: 20px;
+
+    .div-day,
+    .div-type {
+      margin: 0 10px;
+    }
+  }
+}
+
+/* Estilos para móviles */
+@media (max-width: 767px) {
+  .full-page-select {
+    flex-direction: column; /* Ajuste para móviles */
+    justify-content: center;
+    align-items: center;
+    height: 40vh; /* Ajuste de altura para móviles */
+
+    .div-day,
+    .div-type {
+      margin: 10px 0;
+    }
+  }
+}@media (min-width: 768px) and (max-width: 1023px) {
+  .full-page-select {
+    height: 50vh; /* Ajuste de altura para tabletas */
+    padding: 20px;
+
+    .div-day,
+    .div-type {
+      margin: 0 10px;
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .full-page-select {
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 40vh; 
+
+    .div-day,
+    .div-type {
+      margin: 10px 0;
+    }
+  }
+}
